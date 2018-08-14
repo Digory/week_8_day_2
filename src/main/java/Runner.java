@@ -2,6 +2,7 @@ import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
+import models.Owner;
 
 import java.util.List;
 
@@ -11,7 +12,9 @@ public class Runner {
 
         // Test SAVE
 
-        Folder folder1 = new Folder("Digory's massive folder");
+        Owner owner1 = new Owner("Digory", "Dig-the-wig");
+        DBHelper.save(owner1);
+        Folder folder1 = new Folder("Digory's massive folder", owner1);
         DBHelper.save(folder1);
         File file1 = new File("Digory's little file", "jpg", folder1);
         DBHelper.save(file1);
@@ -30,7 +33,7 @@ public class Runner {
 
         // Test READ
 
-        Folder folder2 = new Folder("Brendan's folder");
+        Folder folder2 = new Folder("Brendan's folder but Digory can have it", owner1);
         File file2 = new File("A good file", "odt", folder1);
         DBHelper.save(folder1);
         DBHelper.save(file1);
