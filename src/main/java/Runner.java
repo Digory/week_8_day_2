@@ -1,5 +1,6 @@
 import db.DBFolder;
 import db.DBHelper;
+import db.DBOwner;
 import models.File;
 import models.Folder;
 import models.Owner;
@@ -49,5 +50,11 @@ public class Runner {
         // Test getFilesInFolder(Folder)
 
         List<File> foundFilesInFolder = DBFolder.getFilesInFolder(folder1);
+
+        // Test getAllFoldersOwnedBy(Owner)
+
+        Owner owner2 = new Owner("Brendan", "BT");
+        List<Folder> foundFoldersOwnedByOwner1 = DBOwner.getAllFoldersOwnedBy(owner1);
+        List<Folder> foundFoldersOwnedByOwner2 = DBOwner.getAllFoldersOwnedBy(owner2);
     }
 }
