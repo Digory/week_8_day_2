@@ -22,6 +22,10 @@ public class Runner {
 
         // Test DELETE
 
+        DBHelper.delete(file1);
+        DBHelper.delete(folder1);
+
+
         // Test READ
 
     }
