@@ -1,3 +1,4 @@
+import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
@@ -41,5 +42,9 @@ public class Runner {
 
         List<Folder> foundFolders = DBHelper.findAll(Folder.class);
         List<File> foundFiles = DBHelper.findAll(File.class);
+
+        // Test getFilesInFolder(Folder)
+
+        List<File> foundFilesInFolder = DBFolder.getFilesInFolder(folder1);
     }
 }
